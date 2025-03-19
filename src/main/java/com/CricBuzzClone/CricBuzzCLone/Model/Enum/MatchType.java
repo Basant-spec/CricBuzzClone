@@ -2,7 +2,7 @@ package com.CricBuzzClone.CricBuzzCLone.Model.Enum;
 
 public enum MatchType {
 
-    odi,
+    ODI,
     T20,
     TEST
 

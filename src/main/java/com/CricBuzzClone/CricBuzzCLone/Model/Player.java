@@ -1,7 +1,7 @@
 package com.CricBuzzClone.CricBuzzCLone.Model;
 
-import com.CricBuzzClone.CricBuzzCLone.Model.Enum.Gender;
 import com.CricBuzzClone.CricBuzzCLone.Model.Enum.Speciality;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -11,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 @FieldDefaults(level= AccessLevel.PRIVATE)
 @Entity
 public class Player
@@ -18,12 +19,16 @@ public class Player
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String Name;
+    String name;
     int age;
-    @Enumerated(EnumType.STRING)
-    Gender gender;
+    String gender;
     @Enumerated(EnumType.STRING)
     Speciality speciality;
-
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnore
+    Team team;
+    @OneToOne(mappedBy="player",cascade=CascadeType.ALL)
+    Stats stats;
 
 }
