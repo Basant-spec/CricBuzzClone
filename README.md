@@ -4,6 +4,7 @@ A **Spring Boot-based** cricket management system that allows users to:
 ✅ Add & retrieve players  
 ✅ Get players by **gender & specialty** (Batsman, Bowler, etc.)  
 ✅ Manage teams & player stats  
+✅ Register match between two teams
 
 ### **Tech Stack:**  
 - **Spring Boot, Spring Web, JPA, Hibernate**  
